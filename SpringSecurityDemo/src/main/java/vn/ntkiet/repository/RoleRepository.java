@@ -12,7 +12,7 @@ import vn.ntkiet.entity.Role;
 
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long>{
-	@Query("SELECT u FROM Role u WHERE u.name = :name")
+	@Query("SELECT u FROM roles u WHERE u.name = :name")
 	public Role getUserByName(@Param("name") String name);
 	Optional<Role> findByName(String name);
 }

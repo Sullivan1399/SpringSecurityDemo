@@ -28,7 +28,7 @@ public class Product {
     private String brand;
 
     @Column(columnDefinition = "nvarchar(255)")
-    private String madein;
+    private String madeIn;
 
     private float price;
 }

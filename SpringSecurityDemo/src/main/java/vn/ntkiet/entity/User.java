@@ -39,10 +39,10 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "userId")
-	private int userId;
+	private Long userId;
 	
-	@Column(name = "name", columnDefinition = "varchar(255)")
-	private String name;
+	@Column(name = "username", columnDefinition = "varchar(255)")
+	private String username;
 	
 	@Column(name = "password", columnDefinition = "varchar(255)")
 	private String password;
@@ -51,6 +51,8 @@ public class User implements Serializable {
 	@Email(message = "Nhập đúng định dạng email")
 	@NotEmpty(message = "Hãy nhập email")
 	private String email;
+	private String name;
+	private boolean enabled;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(

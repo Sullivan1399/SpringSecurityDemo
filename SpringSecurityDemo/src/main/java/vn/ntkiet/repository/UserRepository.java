@@ -10,9 +10,9 @@ import org.springframework.stereotype.Repository;
 import vn.ntkiet.entity.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Integer> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
-    @Query("SELECT u FROM Users u WHERE u.username = :username")
+    @Query("SELECT u FROM users u WHERE u.username = :username")
     public User getUserByUsername(@Param("username") String username);
 
     Optional<User> findByEmail(String email);
